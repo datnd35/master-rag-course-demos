@@ -1,5 +1,7 @@
+import gc
 import json
 import os
+import shutil
 import warnings
 
 from dotenv import load_dotenv
@@ -18,6 +20,30 @@ load_dotenv()
 
 # Khởi tạo model chat mặc định của OpenAI
 model = ChatOpenAI()
+
+
+def reset_vectorstore():
+    global vectorstore, documents, chunks, embeddings
+
+    # Clear RAM
+    vectorstore = None
+    documents = []
+    chunks = []
+    embeddings = None
+
+    # Delete old FAISS data
+    if os.path.exists("faiss_index"):
+        shutil.rmtree("faiss_index")
+
+    # Garbage collection
+    gc.collect()
+
+    print("Reset completed! Ready to ingest documents again.")
+
+
+# RESET DATA BEFORE INGESTION
+reset_vectorstore()
+
 
 # BƯỚC 1: Tải tài liệu từ web (giống "tải sách về máy")
 loader = WebBaseLoader(

@@ -10,7 +10,7 @@ env/
 *.egg-info/
 
 # Generated vector store
-faiss_index/
+**/faiss_index/
 
 # IDE / OS
 .vscode/
