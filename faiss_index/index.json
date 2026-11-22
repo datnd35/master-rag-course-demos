@@ -1,0 +1,411 @@
+{
+  "chunks": [
+    {
+      "id": "42fa9697-d1ea-4b48-b1db-8141b32a8a03",
+      "text": "Quickstart - Docs by LangChain",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "6fca6644-659d-4979-9260-838388c3fca8",
+      "text": "Documentation IndexFetch the complete documentation index at: /llms.txtUse this file to discover all available pages before exploring further.Skip to main contentWould you notice if your agent got worse in production? Tell us in our annual survey for the chance to win LangChain swag.Docs by LangChain home pageBuildSearch...⌘KAsk AIGitHubTry LangSmithTry LangSmithSearch...NavigationGet startedQuickstartOverviewManaged Deep AgentsDeep AgentsLangChainLangGraphOpenWikiIntegrationsLearnReferenceContributePythonOverviewGet startedInstallQuickstartChangelogPhilosophyCore componentsAgentsModelsMessagesToolsShort-term memoryEvent streamingStreamingStructured outputMiddlewareOverviewPrebuilt middlewareCustom middlewareFrontendOverviewPatternsIntegrationsAdvanced usageGuardrailsRuntimeContext engineeringMCPHuman-in-the-loopMulti-agentRetrievalLong-term memoryAgent developmentLangSmith StudioTestAgent Chat UIProductionDeploymentObservabilityOn this pageBack to topInstall dependenciesSet up API",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "9c53f8da-8249-4227-9e5f-7bbde60fd8a6",
+      "text": "memoryAgent developmentLangSmith StudioTestAgent Chat UIProductionDeploymentObservabilityOn this pageBack to topInstall dependenciesSet up API keysBuild a basic agentBuild a real-world agentTrace agent callsNext stepsGet startedQuickstartCopy pageCopy pageBuild your first agent in minutesCopy pageCopy pageThis quickstart shows you how to create a fully functional AI agent in just a few minutes.",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "14843b3b-bfa7-47a5-bde8-67b3e0881e45",
+      "text": "Build the LangChain quickstart agentCopiedCopy prompt\nUsing an AI coding assistant?",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "0105eee2-909c-4013-b424-e4c5036f4d95",
+      "text": "Install the LangChain Docs MCP servers to give your agent access to up-to-date LangChain documentation and examples.\nConnect LangChain docs MCP serversCopiedCopy prompt\n\n\nInstall LangChain Skills to improve your agent’s performance on LangChain ecosystem tasks.\nInstall LangChain SkillsCopiedCopy prompt\n\n\nInstall dependencies\nInstall the following packages to follow along:\nuvpipvenvuv python pin 3.11\nuv init\nuv add langchain\nuv sync\n# Install Python 3.11+ separately if needed.\npip install -U langchain\n# Install Python 3.11+ separately if needed.\npython3.11 -m venv .venv\nsource .venv/bin/activate\n# Windows: .venv\\Scripts\\activate\npip install -U langchain",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "16394178-019f-4f8a-ab40-05c0ecc2b202",
+      "text": "Set up API keys\nGet an API key from any supported model provider (for example, Google Gemini or OpenAI).\nSet the API keys in your shell or in a .env file, for example:\n OpenAI Google Gemini Claude (Anthropic) OpenRouter Fireworks Baseten Ollama Azure AWS Bedrock HuggingFace OtherShell.envexport OPENAI_API_KEY=\"your-api-key\"\nOPENAI_API_KEY=your-api-key\nShell.envexport GOOGLE_API_KEY=\"your-api-key\"\nGOOGLE_API_KEY=your-api-key\nShell.envexport ANTHROPIC_API_KEY=\"your-api-key\"\nANTHROPIC_API_KEY=your-api-key\nShell.envexport OPENROUTER_API_KEY=\"your-api-key\"\nOPENROUTER_API_KEY=your-api-key\nShell.envexport FIREWORKS_API_KEY=\"your-api-key\"\nFIREWORKS_API_KEY=your-api-key\nShell.envexport BASETEN_API_KEY=\"your-api-key\"\nBASETEN_API_KEY=your-api-key\nShell.env# Local: Ollama must be running (https://ollama.com)\n# Cloud: Set your Ollama API key for hosted inference\nexport OLLAMA_API_KEY=\"your-api-key\"\n# Local: Ollama must be running (https://ollama.com)",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "78d73fc4-268b-4551-897e-1133d2f74f46",
+      "text": "# Cloud: Set your Ollama API key for hosted inference\nexport OLLAMA_API_KEY=\"your-api-key\"\n# Local: Ollama must be running (https://ollama.com)\n# Cloud: Set your Ollama API key for hosted inference\nOLLAMA_API_KEY=your-api-key\nShell.envexport AZURE_OPENAI_API_KEY=\"your-api-key\"\nexport AZURE_OPENAI_ENDPOINT=\"https://your-resource.openai.azure.com\"\nexport AZURE_OPENAI_DEPLOYMENT_NAME=\"your-deployment\"\nAZURE_OPENAI_API_KEY=your-api-key\nAZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com\nAZURE_OPENAI_DEPLOYMENT_NAME=your-deployment\nShell.envexport AWS_ACCESS_KEY_ID=\"your-access-key\"\nexport AWS_SECRET_ACCESS_KEY=\"your-secret-key\"\nexport AWS_REGION=\"us-east-1\"\nAWS_ACCESS_KEY_ID=your-access-key\nAWS_SECRET_ACCESS_KEY=your-secret-key\nAWS_REGION=us-east-1\nShell.envexport HUGGINGFACEHUB_API_TOKEN=\"hf_...\"\nHUGGINGFACEHUB_API_TOKEN=hf_...\nSee the full list of supported chat model integrations.\nTo load a .env file, use python-dotenv (load_dotenv()).",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "c1f48c91-b9ed-410b-ad1f-3996d40b3a80",
+      "text": "Shell.envexport HUGGINGFACEHUB_API_TOKEN=\"hf_...\"\nHUGGINGFACEHUB_API_TOKEN=hf_...\nSee the full list of supported chat model integrations.\nTo load a .env file, use python-dotenv (load_dotenv()).\nIf you are using the LangSmith LLM Gateway, traffic to providers is routed through LangSmith. Use the gateway key as the API key instead.\nBuild a basic agent\nStart by creating a simple agent that can answer questions and call tools. The agent in this example uses the chosen language model, a basic weather function as a tool, and a simple prompt to guide its behavior:\nOpenAIGoogle GeminiClaude (Anthropic)OpenRouterFireworksBasetenOllamaAzureAWS BedrockHuggingFacefrom langchain.agents import create_agent",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "d70a5abb-4d5e-493e-b3b7-4160bf4218b6",
+      "text": "def get_weather(city: str) -> str:\n    \"\"\"Get weather for a given city.\"\"\"\n    return f\"It's always sunny in {city}!\"\n\nagent = create_agent(\n    model=\"openai:gpt-6.1-sol\",\n    tools=[get_weather],\n    system_prompt=\"You are a helpful assistant\",\n)\n\nresult = agent.invoke(\n    {\"messages\": [{\"role\": \"user\", \"content\": \"What's the weather in San Francisco?\"}]}\n)\nprint(result[\"messages\"][-1].content_blocks)\nfrom langchain.agents import create_agent\n\ndef get_weather(city: str) -> str:\n    \"\"\"Get weather for a given city.\"\"\"\n    return f\"It's always sunny in {city}!\"\n\nagent = create_agent(\n    model=\"google_genai:gemini-2.5-flash-lite\",\n    tools=[get_weather],\n    system_prompt=\"You are a helpful assistant\",\n)\n\nresult = agent.invoke(\n    {\"messages\": [{\"role\": \"user\", \"content\": \"What's the weather in San Francisco?\"}]}\n)\nprint(result[\"messages\"][-1].content_blocks)\nfrom langchain.agents import create_agent",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "5d22e00f-9200-406c-a731-8c6f885288c7",
+      "text": "def get_weather(city: str) -> str:\n    \"\"\"Get weather for a given city.\"\"\"\n    return f\"It's always sunny in {city}!\"\n\nagent = create_agent(\n    model=\"claude-sonnet-4-6\",\n    tools=[get_weather],\n    system_prompt=\"You are a helpful assistant\",\n)\n\nresult = agent.invoke(\n    {\"messages\": [{\"role\": \"user\", \"content\": \"What's the weather in San Francisco?\"}]}\n)\nprint(result[\"messages\"][-1].content_blocks)\nfrom langchain.agents import create_agent\n\ndef get_weather(city: str) -> str:\n    \"\"\"Get weather for a given city.\"\"\"\n    return f\"It's always sunny in {city}!\"\n\nagent = create_agent(\n    model=\"openrouter:anthropic/claude-sonnet-4-6\",\n    tools=[get_weather],\n    system_prompt=\"You are a helpful assistant\",\n)\n\nresult = agent.invoke(\n    {\"messages\": [{\"role\": \"user\", \"content\": \"What's the weather in San Francisco?\"}]}\n)\nprint(result[\"messages\"][-1].content_blocks)\nfrom langchain.agents import create_agent",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "4a04bf70-3f26-469d-96c0-0cbe4bcbc30f",
+      "text": "def get_weather(city: str) -> str:\n    \"\"\"Get weather for a given city.\"\"\"\n    return f\"It's always sunny in {city}!\"\n\nagent = create_agent(\n    model=\"fireworks:accounts/fireworks/models/qwen3p5-397b-a17b\",\n    tools=[get_weather],\n    system_prompt=\"You are a helpful assistant\",\n)\n\nresult = agent.invoke(\n    {\"messages\": [{\"role\": \"user\", \"content\": \"What's the weather in San Francisco?\"}]}\n)\nprint(result[\"messages\"][-1].content_blocks)\nfrom langchain.agents import create_agent\n\ndef get_weather(city: str) -> str:\n    \"\"\"Get weather for a given city.\"\"\"\n    return f\"It's always sunny in {city}!\"\n\nagent = create_agent(\n    model=\"baseten:zai-org/GLM-5.2\",\n    tools=[get_weather],\n    system_prompt=\"You are a helpful assistant\",\n)\n\nresult = agent.invoke(\n    {\"messages\": [{\"role\": \"user\", \"content\": \"What's the weather in San Francisco?\"}]}\n)\nprint(result[\"messages\"][-1].content_blocks)\nfrom langchain.agents import create_agent",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "f02e8a6f-f9f2-4d61-8da4-5efc5b1f0e81",
+      "text": "def get_weather(city: str) -> str:\n    \"\"\"Get weather for a given city.\"\"\"\n    return f\"It's always sunny in {city}!\"\n\nagent = create_agent(\n    model=\"ollama:devstral-2\",\n    tools=[get_weather],\n    system_prompt=\"You are a helpful assistant\",\n)\n\nresult = agent.invoke(\n    {\"messages\": [{\"role\": \"user\", \"content\": \"What's the weather in San Francisco?\"}]}\n)\nprint(result[\"messages\"][-1].content_blocks)\nimport os\nfrom langchain.agents import create_agent\nfrom langchain.chat_models import init_chat_model\n\ndef get_weather(city: str) -> str:\n    \"\"\"Get weather for a given city.\"\"\"\n    return f\"It's always sunny in {city}!\"\n\nmodel = init_chat_model(\n    \"azure_openai:gpt-6.1-sol\",\n    azure_deployment=os.environ[\"AZURE_OPENAI_DEPLOYMENT_NAME\"],\n)\nagent = create_agent(\n    model=model,\n    tools=[get_weather],\n    system_prompt=\"You are a helpful assistant\",\n)",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "51b53d55-d32a-4360-bdac-7883d7751920",
+      "text": "result = agent.invoke(\n    {\"messages\": [{\"role\": \"user\", \"content\": \"What's the weather in San Francisco?\"}]}\n)\nprint(result[\"messages\"][-1].content_blocks)\nfrom langchain.agents import create_agent\n\ndef get_weather(city: str) -> str:\n    \"\"\"Get weather for a given city.\"\"\"\n    return f\"It's always sunny in {city}!\"\n\nagent = create_agent(\n    model=\"bedrock_converse:us.anthropic.claude-sonnet-4-6\",\n    tools=[get_weather],\n    system_prompt=\"You are a helpful assistant\",\n)\n\nresult = agent.invoke(\n    {\"messages\": [{\"role\": \"user\", \"content\": \"What's the weather in San Francisco?\"}]}\n)\nprint(result[\"messages\"][-1].content_blocks)\nfrom langchain.agents import create_agent\n\ndef get_weather(city: str) -> str:\n    \"\"\"Get weather for a given city.\"\"\"\n    return f\"It's always sunny in {city}!\"\n\nagent = create_agent(\n    model=\"huggingface:microsoft/Phi-3-mini-4k-instruct\",\n    tools=[get_weather],\n    system_prompt=\"You are a helpful assistant\",\n)",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "72252a51-35a1-464b-8a6b-4d84980942ed",
+      "text": "agent = create_agent(\n    model=\"huggingface:microsoft/Phi-3-mini-4k-instruct\",\n    tools=[get_weather],\n    system_prompt=\"You are a helpful assistant\",\n)\n\nresult = agent.invoke(\n    {\"messages\": [{\"role\": \"user\", \"content\": \"What's the weather in San Francisco?\"}]}\n)\nprint(result[\"messages\"][-1].content_blocks)",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "ec4ad26f-75e6-4163-a410-205a61d080dd",
+      "text": "result = agent.invoke(\n    {\"messages\": [{\"role\": \"user\", \"content\": \"What's the weather in San Francisco?\"}]}\n)\nprint(result[\"messages\"][-1].content_blocks)\n\nWhen you run the code and prompt the agent to tell you about the weather in San Francisco, the agent uses that input and its available context.\nThe agent understands that you are asking about the weather for the city San Francisco and therefore calls the weather tool with the provided city name.\nYou can use any supported model by changing the model name and setting up the appropriate API key. Trace what is happening inside your agent with LangSmith. Follow the tracing quickstart to get set up.We recommend you also set up LangSmith Engine which monitors your traces, detects issues, and proposes fixes.\nBuild a real-world agent\nIn the following example you will build a research agent that can answer questions about text files.\nAlong the way you will explore the following concepts:",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "ce3597cc-46b1-486e-9726-10b481720f90",
+      "text": "Detailed system prompts for better agent behavior\nCreate tools that integrate with external data\nModel configuration for consistent responses\nConversational memory for chat-like interactions\nDeep Agents for built-in features\nTesting your agent\n\n1Define the system promptThe system prompt defines your agent’s role and behavior. Keep it specific and actionable:SYSTEM_PROMPT = \"\"\"You are a literary data assistant.\n\n## Capabilities\n\n- `fetch_text_from_url`: loads document text from a URL into the conversation.\nDo not guess line counts or positions—ground them in tool results from the saved file.\"\"\"\n2Create toolsTools let a model interact with external systems by calling functions you define.\nTools can depend on runtime context and also interact with agent memory.This example uses a tool to load a document from a given URL:import urllib.error\nimport urllib.request\n\nfrom langchain.tools import tool",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "1a724943-3d0a-4361-b294-7cb55453e615",
+      "text": "@tool\ndef fetch_text_from_url(url: str) -> str:\n    \"\"\"Fetch the document from a URL.\n    \"\"\"\n    req = urllib.request.Request(\n        url,\n        headers={\"User-Agent\": \"Mozilla/5.0 (compatible; quickstart-research/1.0)\"},\n    )\n    try:\n        with urllib.request.urlopen(req, timeout=120) as resp:\n            raw = resp.read()\n    except urllib.error.URLError as e:\n        return f\"Fetch failed: {e}\"\n    text = raw.decode(\"utf-8\", errors=\"replace\")\n    return text\nTools should be well-documented: their name, description, and argument names become part of the model’s prompt.\nLangChain’s @tool decorator adds metadata and enables runtime injection with the ToolRuntime parameter.\nLearn more in the tools guide.3Configure your modelSet up your language model with the right parameters for your use case. For example:OpenAIGoogle GeminiClaude (Anthropic)OpenRouterFireworksBasetenOllamaAzureAWS BedrockHuggingFacefrom langchain.chat_models import init_chat_model",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "1f95e642-85f7-4310-9190-a78e893d5483",
+      "text": "model = init_chat_model(\n    \"openai:gpt-6.1-sol\",\n    temperature=0.5,\n    timeout=300,\n    max_tokens=25000,\n)\nfrom langchain.chat_models import init_chat_model\n\nmodel = init_chat_model(\n    \"gemini-3.1-pro-preview\",\n    model_provider=\"google-genai\",\n    temperature=0.5,\n    timeout=600,\n    max_tokens=25000,\n    streaming=True,\n)\nfrom langchain.chat_models import init_chat_model\n\nmodel = init_chat_model(\n    \"claude-sonnet-4-6\",\n    temperature=0.5,\n    timeout=600,\n    max_tokens=25000,\n    streaming=True,\n)\nfrom langchain.chat_models import init_chat_model\n\nmodel = init_chat_model(\n    \"openrouter:anthropic/claude-sonnet-4-6\",\n    temperature=0.5,\n    timeout=300,\n    max_tokens=25000,\n)\nfrom langchain.chat_models import init_chat_model\n\nmodel = init_chat_model(\n    \"fireworks:accounts/fireworks/models/qwen3p5-397b-a17b\",\n    temperature=0.5,\n    timeout=300,\n    max_tokens=25000,\n)\nfrom langchain.chat_models import init_chat_model",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "d8bc1e18-3190-4a08-97c1-ad3d2c8a110b",
+      "text": "model = init_chat_model(\n    \"fireworks:accounts/fireworks/models/qwen3p5-397b-a17b\",\n    temperature=0.5,\n    timeout=300,\n    max_tokens=25000,\n)\nfrom langchain.chat_models import init_chat_model\n\nmodel = init_chat_model(\n    \"baseten:zai-org/GLM-5.2\",\n    temperature=0.5,\n    timeout=300,\n    max_tokens=25000,\n)\nfrom langchain.chat_models import init_chat_model\n\nmodel = init_chat_model(\n    \"ollama:devstral-2\",\n    temperature=0.5,\n    timeout=300,\n    max_tokens=25000,\n)\nimport os\nfrom langchain.chat_models import init_chat_model\n\nmodel = init_chat_model(\n    \"azure_openai:gpt-6.1-sol\",\n    temperature=0.5,\n    timeout=300,\n    max_tokens=25000,\n    azure_deployment=os.environ[\"AZURE_OPENAI_DEPLOYMENT_NAME\"],\n)\nfrom langchain.chat_models import init_chat_model\n\nmodel = init_chat_model(\n    \"us.anthropic.claude-sonnet-4-6\",\n    model_provider=\"bedrock_converse\",\n    temperature=0.5,\n    timeout=300,\n    max_tokens=25000,\n)\nfrom langchain.chat_models import init_chat_model",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "24f0c832-a99f-4070-90c5-1dd2abcf2009",
+      "text": "model = init_chat_model(\n    \"microsoft/Phi-3-mini-4k-instruct\",\n    model_provider=\"huggingface\",\n    temperature=0.5,\n    timeout=300,\n    max_tokens=25000,\n)\nDepending on the model and provider chosen, initialization parameters may vary; refer to their reference pages for details.4Add memoryAdd memory to your agent to maintain state across interactions. This allows\nthe agent to remember previous conversations and context.from langgraph.checkpoint.memory import InMemorySaver",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "a70340ff-6e7a-46a3-82b2-b37fea2b87ba",
+      "text": "checkpointer = InMemorySaver()\nIn production, use a persistent checkpointer that saves message history to a database.\nSee Add and manage memory for more details.5Create and run the agentNow assemble your agent with all the components and run it.There are two different frameworks for creating agents: LangChain agents and deep agents.\nBoth LangChain and deep agents provide you with fine-grained control over tools, memory, and more.\nThe main difference between both is that deep agents come with a range of commonly useful capabilities already built in, such as planning, file system tools, and subagents.Use deep agents when you want maximum capability with minimal setup; choose LangChain agents when you need fine-grained control.To compare both in this step, install the deepagents package:uvpipuv add deepagents\npip install -U deepagents",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "33dc793d-be71-408f-b777-b7ffc4d59f8a",
+      "text": "pip install -U deepagents\nThis example sends the entire text of The Great Gatsby to the model and may take a minute or two to respond. You can view example output in the next step.Let’s try both:from langchain.agents import create_agent\nfrom deepagents import create_deep_agent",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "c8828d4f-1bf7-4d39-8b3b-8fc192bbeaa4",
+      "text": "agent = create_agent(\n    model=model,\n    tools=[fetch_text_from_url],\n    system_prompt=SYSTEM_PROMPT,\n    checkpointer=checkpointer,\n)\n\ndeep_agent = create_deep_agent(\n    model=model,\n    tools=[fetch_text_from_url],\n    system_prompt=SYSTEM_PROMPT,\n    checkpointer=checkpointer,\n)\n\ncontent = f\"\"\"Project Gutenberg hosts a full plain-text copy of F. Scott Fitzgerald's The Great Gatsby.\nURL: https://www.gutenberg.org/files/64317/64317-0.txt\n\nAnswer as much as you can:\n\n1) How many lines in the complete Gutenberg file contain the substring `Gatsby` (count lines, not occurrences within a line, each line ends with a line break).\n2) The 1-based line number of the first line in the file that contains `Daisy`.\n3) A two-sentence neutral synopsis.",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "168fc941-df74-4c48-aabe-75dfeab4bf85",
+      "text": "Do your best on (1) and (2). If at any point you realize you cannot **verify** an exact answer with\nyour available tools and reasoning, do not fabricate numbers: use `null` for that field and spell out\nthe limitation in `how_you_computed_counts`. If you encounter any errors please report what the error was and what the error message was.\"\"\"",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "4356d62d-80b1-46af-93d0-228d3fb7715c",
+      "text": "print(\"Running create_agent...\", flush=True)\nagent_result = agent.invoke(\n    {\"messages\": [{\"role\": \"user\", \"content\": content}]},\n    config={\"configurable\": {\"thread_id\": \"great-gatsby-lc\"}},\n)\nprint(\"Running create_deep_agent...\", flush=True)\ndeep_agent_result = deep_agent.invoke(\n    {\"messages\": [{\"role\": \"user\", \"content\": content}]},\n    config={\"configurable\": {\"thread_id\": \"great-gatsby-da\"}},\n)\nprint(\"\\ncreate_agent:\")\nprint(agent_result[\"messages\"][-1].content_blocks)\nprint(\"\\ncreate_deep_agent:\")\nprint(deep_agent_result[\"messages\"][-1].content_blocks)\nThe following expander has everything together in a runnable script:Show Full example codeimport urllib.error\nimport urllib.request\n\nfrom langchain.agents import create_agent\nfrom deepagents import create_deep_agent\nfrom langchain.chat_models import init_chat_model\nfrom langchain.tools import tool\nfrom langgraph.checkpoint.memory import InMemorySaver\n\nSYSTEM_PROMPT = \"\"\"You are a literary data assistant.\n\n## Capabilities",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "2244aa6b-62a2-4d92-a46a-87512eda4696",
+      "text": "SYSTEM_PROMPT = \"\"\"You are a literary data assistant.\n\n## Capabilities\n\n- `fetch_text_from_url`: loads document text from a URL into the conversation.\nDo not guess line counts or positions—ground them in tool results from the saved file.\"\"\"\n\n\n@tool\ndef fetch_text_from_url(url: str) -> str:\n    \"\"\"Fetch the document from a URL.\n    \"\"\"\n    req = urllib.request.Request(\n        url,\n        headers={\"User-Agent\": \"Mozilla/5.0 (compatible; quickstart-research/1.0)\"},\n    )\n    try:\n        with urllib.request.urlopen(req, timeout=120) as resp:\n            raw = resp.read()\n    except urllib.error.URLError as e:\n        return f\"Fetch failed: {e}\"\n    text = raw.decode(\"utf-8\", errors=\"replace\")\n    return text\n\n\nmodel = init_chat_model(\n    \"gemini-3.1-pro-preview\",\n    model_provider=\"google-genai\",\n    temperature=0.5,\n    timeout=600,\n    max_tokens=25000,\n    streaming=True,\n)\n\ncheckpointer = InMemorySaver()",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "fb15424f-528b-423b-9d8a-daea220cae1b",
+      "text": "checkpointer = InMemorySaver()\n\nagent = create_agent(\n    model=model,\n    tools=[fetch_text_from_url],\n    system_prompt=SYSTEM_PROMPT,\n    checkpointer=checkpointer,\n)\n\ndeep_agent = create_deep_agent(\n    model=model,\n    tools=[fetch_text_from_url],\n    system_prompt=SYSTEM_PROMPT,\n    checkpointer=checkpointer,\n)\n\ncontent = f\"\"\"Project Gutenberg hosts a full plain-text copy of F. Scott Fitzgerald's The Great Gatsby.\nURL: https://www.gutenberg.org/files/64317/64317-0.txt\n\nAnswer as much as you can:\n\n1) How many lines in the complete Gutenberg file contain the substring `Gatsby` (count lines, not occurrences within a line, each line ends with a line break).\n2) The 1-based line number of the first line in the file that contains `Daisy`.\n3) A two-sentence neutral synopsis.",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "8f9910bb-8398-473b-868a-4dc68e43fb40",
+      "text": "Do your best on (1) and (2). If at any point you realize you cannot **verify** an exact answer with\nyour available tools and reasoning, do not fabricate numbers: use `null` for that field and spell out\nthe limitation in `how_you_computed_counts`. If you encounter any errors please report what the error was and what the error message was.\"\"\"",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "ed09c199-47c9-4f6b-a116-98f94fa7182e",
+      "text": "print(\"Running create_agent...\", flush=True)\nagent_result = agent.invoke(\n    {\"messages\": [{\"role\": \"user\", \"content\": content}]},\n    config={\"configurable\": {\"thread_id\": \"great-gatsby-lc\"}},\n)\nprint(\"Running create_deep_agent...\", flush=True)\ndeep_agent_result = deep_agent.invoke(\n    {\"messages\": [{\"role\": \"user\", \"content\": content}]},\n    config={\"configurable\": {\"thread_id\": \"great-gatsby-da\"}},\n)\nprint(\"\\ncreate_agent:\")\nprint(agent_result[\"messages\"][-1].content_blocks)\nprint(\"\\ncreate_deep_agent:\")\nprint(deep_agent_result[\"messages\"][-1].content_blocks)\n6Review the resultsThe results will differ based on the model and the execution. LangChain agents Deep agents**1) Number of lines containing `Gatsby`:** `null`\n\n**2) First line containing `Daisy`:** `null`",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "e1d2cd2a-9ee8-4485-a69b-1c0a7ca2ff72",
+      "text": "**2) First line containing `Daisy`:** `null`\n\n**3) Synopsis:**\nThe Great Gatsby follows the mysterious millionaire Jay Gatsby and his obsession with reuniting with his former lover, Daisy Buchanan, as narrated by his neighbor Nick Carraway. Set against the backdrop of the Roaring Twenties on Long Island, the novel explores themes of wealth, class, and the elusive nature of the American Dream.",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "d3fc86a2-a7f0-483c-b283-ae13f56022d3",
+      "text": "**how_you_computed_counts:**\nI successfully fetched the full text of the eBook using the `fetch_text_from_url` tool. However, because I do not have access to a code execution environment (like Python) or text-processing tools (like `grep`), I cannot deterministically split the text by line breaks, iterate through the thousands of lines, and verify the exact line numbers or match counts. LLMs cannot reliably perform exact line-counting or indexing over massive texts within their context window without external computational tools. As instructed, rather than fabricating or guessing a number, I have output `null` for the exact counts and positions.\nSee all 10 linesBased on the text fetched directly from the Gutenberg URL and analyzed using filesystem search tools, here are the answers to your questions:\n\n**1) Lines containing the substring `Gatsby`**\n**258** lines contain the exact substring `Gatsby`.",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "37ab1c7b-401c-44cc-892e-82b1cb8eb222",
+      "text": "**1) Lines containing the substring `Gatsby`**\n**258** lines contain the exact substring `Gatsby`.\n\n**2) First line containing `Daisy`**\nLine **181** is the first line in the file that contains the exact substring `Daisy`.\n*(For context, the line reads: \"Buchanans. Daisy was my second cousin once removed, and I’d known Tom\")*\n\n**3) Two-sentence neutral synopsis**\n*The Great Gatsby* follows the mysterious millionaire Jay Gatsby and his obsessive pursuit to reunite with his former lover, Daisy Buchanan, in 1920s Long Island. The story is narrated by Nick Carraway, who observes the tragic consequences of Gatsby's relentless ambition and the shallow materialism of the era's wealthy elite.\n\n***",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "da621ce2-6465-447b-9bd0-14e5c789b008",
+      "text": "**How counts were computed:**\nWhen fetching the document from the URL, the file was too large for the standard output and was automatically saved to the local filesystem by the system (`/large_tool_results/x246ax2x`). I then used the `grep` tool to search the saved file for the exact literal substrings `Gatsby` and `Daisy`. The `grep` tool returned every matching line along with its 1-based line number. I manually counted the exact number of lines returned for `Gatsby` (which totaled 258) and identified the first line number returned for `Daisy` (which was 181). I also verified there were no uppercase variations (`GATSBY` or `DAISY`) that would have been missed. No errors were encountered during this process.\nSee all 17 linesIf you look at the output on both tabs, you notice that the LangChain agent provided answers but they are estimates. The agent lacks the tools to answer this question. You may also get errors that the prompt is too long.The deep agent, on the other hand can:",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "d3470ab6-83b4-4416-b244-db61b8c34a0b",
+      "text": "Plans its approach using the built-in write_todos tool to break down the research task.\nLoads the file by calling the fetch_text_from_url tool to gather information.\nManages context by using file system tools (grep and read_file).\nSpawns subagents as needed to delegate complex subtasks to specialized subagents.\nFor LangChain agents, you must implement more capabilities to get a similar level of service and can customize them along the way as needed.\nTrace agent calls\nCreate an agent once before sending traces. Use agent addressing to select its identifier and environment. If an integration requires project_name, use the selected environment’s tracer_session_name.\nMost interesting agents you build with LangChain make many calls to LLMs. As these agents get more complex, it becomes important to be able to inspect what exactly is going on inside your agent. The best way to do this is with LangSmith.\nSign up for a LangSmith account and set these to start logging traces:",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "187b7f92-9219-4f3b-8fb4-205ee5ec11bc",
+      "text": "Sign up for a LangSmith account and set these to start logging traces:\nexport LANGSMITH_AGENT_ID=\"<your-agent-id>\"\nexport LANGSMITH_AGENT_ENVIRONMENT=\"local\"\nexport LANGSMITH_TRACING=\"true\"\nexport LANGSMITH_API_KEY=\"...\"",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "6eac11e1-76c2-4240-ace9-a66502b29dd7",
+      "text": "Once set, run your script again and then inspect what happened during your agent calls on LangSmith .\nTo learn more about tracing your agent with LangSmith, see the LangSmith documentation.We recommend you also set up LangSmith Engine which monitors your traces, detects issues, and proposes fixes.\nNext steps\nYou now have agents that can:\n\nUnderstand context and remember conversations\nUse tools intelligently\nProvide structured responses in a consistent format\nHandle user-specific information through context\nMaintain conversation state across interactions\nPlan, research, and synthesize (deep agents only)\n\nContinue with:\n\nLangChain agents: Add and manage memory, deploy to production\nDeep Agents: Customization options, persistent memory, deploy to production",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    },
+    {
+      "id": "5407b86a-08a1-4119-b598-ad1a4c70060f",
+      "text": "Continue with:\n\nLangChain agents: Add and manage memory, deploy to production\nDeep Agents: Customization options, persistent memory, deploy to production\n\n\nConnect these docs to your agent of choice via MCP for real-time answers.Edit this page on GitHub or file an issue.Was this page helpful?YesNoInstall LangChainPreviousChangelogNextDocs by LangChain home pagegithubxlinkedinyoutubeResourcesForumChangelogLangChain AcademyContact SalesCompanyHomeTrust CenterCareersBloggithubxlinkedinyoutube",
+      "source": "https://python.langchain.com/docs/get_started/introduction",
+      "metadata": {
+        "source": "https://python.langchain.com/docs/get_started/introduction",
+        "title": "Quickstart - Docs by LangChain",
+        "description": "Build your first agent in minutes",
+        "language": "en"
+      }
+    }
+  ]
+}
