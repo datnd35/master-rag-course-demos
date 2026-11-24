@@ -3,6 +3,7 @@
 Khung ban đầu: menu CLI, nạp web, chia chunk (300 token, overlap 50), embedding, lưu ChromaDB, tạo retriever.
 
 ## Bạn sẽ học
+
 - WebBaseLoader + BeautifulSoup lọc HTML
 - RecursiveCharacterTextSplitter
 - OpenAIEmbeddings + Chroma
@@ -10,6 +11,7 @@ Khung ban đầu: menu CLI, nạp web, chia chunk (300 token, overlap 50), embed
 - Dùng .env
 
 ## Cấu trúc
+
 - `main.py: menu CLI, vòng lặp hỏi đáp`
 - `query.py: load_documents(), split_documents(), create_vectorstore(), get_retriever()`
 - `utils.py: hàm in màu, format_qa_pair()`
@@ -17,6 +19,7 @@ Khung ban đầu: menu CLI, nạp web, chia chunk (300 token, overlap 50), embed
 - `requirements.txt`, `.env.example`
 
 ## Cài đặt & chạy
+
 ```
 python3 -m venv env && source env/bin/activate
 pip install -r requirements.txt
@@ -25,3 +28,8 @@ python main.py
 ```
 
 > Không commit API key thật. Chỉ để trong `.env`.
+
+cd 02-decomposition-starter
+rm -rf chroma_db
+python ingest.py
+python main.py

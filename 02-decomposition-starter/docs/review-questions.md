@@ -61,16 +61,26 @@ Trả lời:
 
 - Thư mục chroma_db lưu trữ dữ liệu vector embedding của các chunk. Khi chạy lại nếu dữ liệu ko thay đổi thì ko cần tạo lại.
 
+- So sánh Chroma và FAISS: Chroma là một vector store được phát triển bởi ChromaDB, có thể lưu trữ dữ liệu trên đĩa và hỗ trợ nhiều tính năng như tìm kiếm theo vector, phân loại, clustering,... trong khi đó FAISS là một thư viện mã nguồn mở của Facebook, tập trung vào việc tìm kiếm vector nhanh chóng và hiệu quả.
+
 ## Phần 5: Retriever
 
 16. `as_retriever()` trả về gì? Cách đặt số lượng kết quả `k`?
 17. Retriever tìm tài liệu liên quan bằng cách nào (độ tương đồng vector)?
 18. Điều gì xảy ra khi câu hỏi chứa nhiều ý (multi-hop)? Vì sao retriever dễ thất bại?
 
+- as_retriever() trả về một retriver object dùng để tìm kiếm các chunk liên quan đến câu hỏi. Số lượng kết quả K có thể đặt bằng cách truyền tham số `k` vào hàm.
+
+- Retriver tìm tài liệu liên quan bằng cách tính số độ tương đồng vector giữa embedding của câu hỏi và embedding của các chunk, sau đó trả về các chunk có độ tương đồng cao nhất.
+
+- Khi câu hỏi chứa nhiều ý , retriver dễ thất bại vì nó chỉ tìm kiếm các chunk liên quan đến tổng thể câu hỏi, mà không phân tích được riêng lẻ.
+
 ## Phần 6: Tiện ích & cấu hình
 
 19. File `.env` dùng để làm gì? Vì sao không hard-code API key?
 20. `format_qa_pair` và `format_qa_pairs` trong `utils.py` làm gì? Dùng ở bước nào của decomposition?
+
+- format_qa_pair và format_qa_pairs trong utils.py dùng để định dạng câu hỏi và câu trả lời.
 
 ## Phần 7: Thực hành
 
@@ -79,8 +89,9 @@ Trả lời:
 23. Thử một câu hỏi phức tạp, quan sát các chunk trả về và nhận xét chất lượng.
 24. Đề xuất cách chia câu hỏi phức tạp thành các câu hỏi con.
 
-## Gợi ý đáp án ngắn
-
-- Q8: 300 = kích thước chunk (token), 50 = số token chồng lấn giữa các chunk.
-- Q9: Overlap giữ ngữ cảnh ở ranh giới chunk; overlap = 0 dễ cắt mất ý.
-- Q19: Lưu khóa bí mật ngoài mã nguồn, tránh lộ khi commit.
+- loader = WebBaseLoader(urls=["https://example.com"])
+  document = loader.load()
+  splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(300, 50)
+  splits = splitter.split_documents(document)
+  vectorstore = Chroma.from_documents(documents=splits, embedding=OpenAIEmbeddings(), persist_directory="./chroma_db")
+  retriever = vectorstore.as_retriever()
