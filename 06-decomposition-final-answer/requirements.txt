@@ -1,0 +1,25 @@
+# LangChain core framework for building LLM applications (chains, prompts, agents)
+langchain==0.2.5
+# Community-contributed integrations (document loaders, vector stores, etc.)
+langchain-community==0.2.5
+# Core abstractions and base interfaces used by LangChain packages
+langchain-core==0.2.7
+# LangChain integration for OpenAI models (chat, embeddings)
+langchain-openai==0.1.8
+# Utilities for splitting documents into chunks for RAG
+langchain-text-splitters==0.2.1
+# Official OpenAI Python SDK for calling GPT models and embeddings
+openai==1.34.0
+# Beautiful Soup 4 wrapper package for parsing HTML/XML (web scraping)
+bs4==0.0.2
+# Facebook AI Similarity Search (FAISS) CPU build: fast vector similarity search/store
+chromadb==0.5.3
+langchain-chroma==0.1.2
+# Loads environment variables (e.g. API keys) from a .env file
+python-dotenv==1.0.0
+# Cross-platform colored terminal text output
+colorama==0.4.6
+# Progress bars for loops and long-running tasks
+tqdm==4.66.4
+# OpenAI's fast tokenizer for counting/encoding tokens
+tiktoken==0.7.0

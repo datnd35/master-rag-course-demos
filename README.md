@@ -78,3 +78,20 @@ python main.py
 conda activate rag-course
 python main.py
 ```
+
+---
+
+# Lộ trình các project
+
+| Thư mục                                | Nội dung                           |
+| -------------------------------------- | ---------------------------------- |
+| `01-basic-rag`                         | RAG cơ bản với FAISS + RetrievalQA |
+| `02-decomposition-starter`             | Khung RAG với ChromaDB + CLI       |
+| `03-decomposition-sub-questions`       | Sinh câu hỏi con                   |
+| `04-decomposition-answer-recursively`  | Trả lời đệ quy                     |
+| `05-decomposition-answer-individually` | Trả lời độc lập / song song        |
+| `06-decomposition-final-answer`        | Tổng hợp câu trả lời cuối          |
+
+Mỗi project có README, `docs/concepts.md`, skeleton code để tự implement.
+
+Xem giải thích chi tiết từng project (là gì, mục đích, học được gì) tại [COURSE_OVERVIEW.md](COURSE_OVERVIEW.md).
